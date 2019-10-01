@@ -1,24 +1,6 @@
-import {routes, Routing} from "http4js/core/Routing";
-import {Method} from "http4js/core/Methods";
-import {NativeHttpServer} from "http4js/servers/NativeHttpServer";
-import {ResOf} from "http4js/core/Res";
+import {Server} from './server';
 
-export class Server {
-
-  private server: Routing;
-
-  constructor(port: number) {
-
-    this.server = routes(Method.GET, '/health', async () => ResOf(200))
-      .asServer(new NativeHttpServer(port));
-  }
-
-
-  start() {
-    this.server.start();
-  }
-
-  stop() {
-    this.server.stop();
-  }
-}
+(async () => {
+  const server = new Server();
+  server.start();
+})();

@@ -1,0 +1,33 @@
+body {
+    font-family: "Lato", sans-serif;
+    padding: 20px;
+    background-image: linear-gradient(#fff, #290067);
+}
+
+section {
+    display: flex;
+    height: fit-content;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.selection-block {
+    margin: 5px;
+    padding: 5px;
+    border: 1px dotted coral;
+    background-color: #fef3f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 50px;
+    font-family: "Sura", serif ;
+    color: white;
+    font-size: 46px;
+    background-image: url('/index/hero-lamp.jpg');
+}

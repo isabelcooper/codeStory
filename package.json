@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc --noEmit",
-    "test": "tsc --noEmit; mocha --require ts-node/register 'test/*.test.ts'",
+    "test": "mocha --require ts-node/register 'test/*.test.ts'",
     "start": "ts-node src/index.ts"
   },
   "repository": {
