@@ -8,7 +8,7 @@ import {StaticFileReader} from "./StaticFileReader";
 export class Server {
   private server: Routing;
 
-  constructor(port: number = 1245, private fileReader = new StaticFileReader()) {
+  constructor(private port: number = 1245, private fileReader = new StaticFileReader()) {
 
     this.server = routes(Method.GET, '/health', async () => ResOf(200))
       .withGet('/', async (): Promise<any> => {
@@ -18,12 +18,12 @@ export class Server {
         const fileType = req.uri.path().split('.')[1];
         return ResOf(200, this.fileReader.read(`./index/${req.pathParams.path}`, fileType))
       })
-      .asServer(new NativeHttpServer(port));
+      .asServer(new NativeHttpServer(this.port));
   }
 
   start() {
     this.server.start();
-    // console.log(`Server running on port ${port}`)
+    console.log(`Server running on port ${this.port}`)
   }
 
   stop() {
