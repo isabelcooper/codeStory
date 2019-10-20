@@ -44,6 +44,7 @@ case "${run_arg}" in
     ;;
 "test")
     npm i
+    npm run build
     npm run test
     ;;
 "start")

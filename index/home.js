@@ -1,7 +1,9 @@
-function loadPage(event, _pageName) {
+function expand(event, sectionName) {
        event.preventDefault();
-       console.log("here")
+       const element = document.getElementById(`${sectionName}-details`);
+       element.setAttribute('class', 'expanded');
 }
 
-document.getElementById("blocks").addEventListener("click", () => loadPage(event, "blocks"));
+document.getElementById("blocks")
+    .addEventListener("click", (event) => expand(event, "blocks"));
 

@@ -6,16 +6,18 @@ import {expect} from "chai";
 
 describe('Server', () => {
   const httpClient = HttpClient;
-  const port = 8181;
-  const server = new Server(port);
+  const port = 1245;
+  let server: Server;
 
-  before(() => {
+  beforeEach(async () => {
+    server = new Server(port);
     server.start();
   });
 
-  after(() => {
+  afterEach(async () => {
     server.stop();
   });
+
 
   it('should respond 200 on health', async () => {
     const response = await httpClient(ReqOf(Method.GET,`http://localhost:${port}/health`));
@@ -25,5 +27,6 @@ describe('Server', () => {
   it('should load home js', async () => {
     const response = await httpClient(ReqOf(Method.GET,`http://localhost:${port}/index/home.js`));
     expect(response.status).to.eql(200);
+    expect(response.bodyString()).to.contain('addEventListener("click",');
   });
 });
