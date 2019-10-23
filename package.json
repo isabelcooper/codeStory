@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --noEmit",
     "test": "mocha --require ts-node/register **/*.test.ts",
-    "start": "ts-node src/main.js",
+    "start": "node src/main.js",
     "dev:start": "ts-node-dev src/main.ts",
     "postinstall":"tsc"
   },
