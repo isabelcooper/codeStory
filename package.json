@@ -2,12 +2,12 @@
   "name": "codestory",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.ts",
+  "main": "index.js",
   "scripts": {
     "build": "tsc --noEmit",
     "test": "mocha --require ts-node/register **/*.test.ts",
-    "start": "node src/main.js",
-    "dev:start": "ts-node-dev src/main.ts",
+    "start": "node index.js",
+    "dev:start": "ts-node-dev index.ts",
     "postinstall":"tsc"
   },
   "repository": {
